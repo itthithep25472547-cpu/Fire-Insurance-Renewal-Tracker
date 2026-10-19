@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ระบบเตือนต่ออายุประกันอัคคีภัย · เทเวศประกันภัย</title>
+<title>ระบบเตือนต่ออายุประกันอัคคีภัย · เคียวยะประกันภัย</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500;600;700&family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -290,7 +290,7 @@
   <div class="login-brand-panel">
     <div class="brand-mark-lg">🛡️</div>
     <h1>ระบบเตือนต่ออายุ<br>ประกันอัคคีภัย</h1>
-    <div class="login-brand-en">The Deves Insurance Public Company Limited</div>
+    <div class="login-brand-en">Kyoya Insurance Public Company Limited</div>
     <div class="login-tagline">Pride in Protection</div>
     <ul class="login-features">
       <li>ติดตามวันครบกำหนดต่ออายุกรมธรรม์อัตโนมัติ</li>
@@ -324,7 +324,7 @@
     <div class="topnav-inner">
       <div class="brand-compact">
         <div class="brand-mark-sm">🛡️</div>
-        <div><div class="bc-th">เทเวศประกันภัย</div><div class="bc-en">Renewal Tracker</div></div>
+        <div><div class="bc-th">เคียวยะประกันภัย</div><div class="bc-en">Renewal Tracker</div></div>
       </div>
       <nav class="topnav-tabs">
         <button class="nav-item" data-view="dashboard"><span class="nav-icon" aria-hidden="true">⌂</span>แดชบอร์ด</button>
@@ -366,7 +366,7 @@
     <div class="modal-body">
       <form id="policyForm" onsubmit="return false;">
         <div class="form-section-title">ข้อมูลกรมธรรม์</div>
-        <div class="form-caption">บริษัทผู้รับประกันภัย: <strong>บริษัท เทเวศประกันภัย จำกัด (มหาชน)</strong> (คงที่ทุกกรมธรรม์)</div>
+        <div class="form-caption">บริษัทผู้รับประกันภัย: <strong>บริษัท เคียวยะประกันภัย จำกัด (มหาชน)</strong> (คงที่ทุกกรมธรรม์)</div>
         <div class="form-grid">
           <div class="field-compact"><label>เลขที่กรมธรรม์ <span class="req">*</span></label><input type="text" id="f_policyNumber" required placeholder="FIR-2569-00123"></div>
           <div class="field-compact"><label>ประเภทความคุ้มครอง</label>
@@ -446,12 +446,12 @@ const supabaseConfigured = Boolean(SUPABASE_CONFIG.url && SUPABASE_CONFIG.anonKe
 const supabaseClient = supabaseConfigured && window.supabase?.createClient
   ? window.supabase.createClient(SUPABASE_CONFIG.url, SUPABASE_CONFIG.anonKey)
   : null;
-const INSURER_TH = 'บริษัท เทเวศประกันภัย จำกัด (มหาชน)';
-const INSURER_EN = 'The Deves Insurance Public Company Limited';
-const INSURER_ADDRESS_EN = '97-99 Ratchadamnoen Klang Avenue, Phranakorn, Bangkok 10200, Thailand';
+const INSURER_TH = 'บริษัท เคียวยะประกันภัย จำกัด (มหาชน)';
+const INSURER_EN = 'Kyoya Insurance Public Company Limited';
+const INSURER_ADDRESS_EN = '82 Ratchadamnoen Klang Avenue, Phranakorn, Bangkok 10200, Thailand';
 const DEFAULT_EMAIL_SUBJECT = 'Fire Insurance Renewal Notice — Policy {{policyNumber}}';
 const DEFAULT_EMAIL_BODY = 'Dear {{recipientName}},\n\nThis is a reminder that your fire insurance policy {{policyNumber}} with {{insurerName}} is due to expire on {{expiryDate}}.\n\nSum Insured: {{sumInsured}}\nNet Premium: {{netPremium}}\nVAT (7%): {{vatAmount}}\nStamp Duty (0.4%): {{dutyAmount}}\nTotal Premium Payable: {{totalPremium}}\nPayment Due Date: {{paymentDueDate}}\n\nPlease find the renewal notice attached (PDF). Kindly arrange payment before the due date to avoid a lapse in coverage.\n\nShould you have already made payment or contacted us, please disregard this notice.\n\nSincerely,\nPolicy Administration Team\n{{insurerName}}';
-const DEFAULT_RATE = {'ที่อยู่อาศัย':0.10,'อาคารพาณิชย์':0.25,'โรงงานอุตสาหกรรม':0.45,'คลังสินค้า':0.35,'อื่นๆ':0.20};
+const DEFAULT_RATE = {'ที่อยู่อาศัย':0.069,'อาคารพาณิชย์':0.1,'โรงงานอุตสาหกรรม':0.45,'คลังสินค้า':0.35,'อื่นๆ':0.20};
 const TYPE_EN = {'ที่อยู่อาศัย':'Residential','อาคารพาณิชย์':'Commercial Building','โรงงานอุตสาหกรรม':'Industrial Factory','คลังสินค้า':'Warehouse','อื่นๆ':'Other'};
 
 function todayStart(){ const d=new Date(); d.setHours(0,0,0,0); return d; }
