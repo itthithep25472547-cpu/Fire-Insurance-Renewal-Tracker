@@ -1403,7 +1403,7 @@ function buildEmailParts(d){
     const lines = [
       `เรียน ${d.recipientName || 'ผู้เอาประกันภัย'}`,
       '',
-      `บริษัท ${INSURER_TH} ขอแจ้งเตือนการต่ออายุประกันอัคคีภัยของท่าน`,
+      `บริษัท ${Kyoya Insurance Public Company Limited} ขอแจ้งเตือนการต่ออายุประกันอัคคีภัยของท่าน`,
       '',
       `เลขที่กรมธรรม์: ${d.policyNumber || '—'}`,
       `ประเภทความคุ้มครอง: ${d.policyType || '—'}`,
@@ -1421,7 +1421,7 @@ function buildEmailParts(d){
       '',
       'ขอแสดงความนับถือ',
       'ฝ่ายดูแลกรมธรรม์',
-      INSURER_TH,
+      Kyoya Insurance Public Company Limited,
     ].filter((line, index, all)=>line!=='' || (index>0 && all[index-1]!==''));
     return {
       to:d.recipientEmail||'',
@@ -1469,7 +1469,7 @@ async function exportExcelReport(){
       const rows = sortedPolicies.map(p=>({
         'เลขที่กรมธรรม์': p.policyNumber||'', 'ผู้เอาประกันภัย': p.insuredName||'', 'เลขบัตรประชาชน/นิติบุคคล': p.idNumber||'',
         'ที่อยู่ทรัพย์สินที่เอาประกัน': p.address||'', 'เบอร์โทรศัพท์': p.phone||'', 'อีเมล': p.email||'',
-        'บริษัทประกันภัย': p.insurerCompany||INSURER_TH, 'ประเภทความคุ้มครอง': p.policyType||'',
+        'บริษัทประกันภัย': p.insurerCompany||Kyoya Insurance Public Company Limited, 'ประเภทความคุ้มครอง': p.policyType||'',
         'ทุนประกันภัย (บาท)': Number(p.sumInsured)||0, 'อัตราเบี้ยฯ (%)': Number(p.premiumRate)||0,
         'เบี้ยประกันภัยสุทธิ (บาท)': Number(p.netPremium)||0, 'ภาษีมูลค่าเพิ่ม 7% (บาท)': Number(p.vatAmount)||0,
         'อากรแสตมป์ 0.4% (บาท)': Number(p.dutyAmount)||0, 'เบี้ยรวมที่ต้องชำระ (บาท)': Number(p.premium)||0,
