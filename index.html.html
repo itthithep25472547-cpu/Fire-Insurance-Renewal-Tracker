@@ -1403,7 +1403,7 @@ function buildEmailParts(d){
     const lines = [
       `เรียน ${d.recipientName || 'ผู้เอาประกันภัย'}`,
       '',
-      `บริษัท ${Kyoya Insurance Public Company Limited} ขอแจ้งเตือนการต่ออายุประกันอัคคีภัยของท่าน`,
+      `บริษัท ${INSURER_TH} ขอแจ้งเตือนการต่ออายุประกันอัคคีภัยของท่าน`,
       '',
       `เลขที่กรมธรรม์: ${d.policyNumber || '—'}`,
       `ประเภทความคุ้มครอง: ${d.policyType || '—'}`,
@@ -1421,7 +1421,7 @@ function buildEmailParts(d){
       '',
       'ขอแสดงความนับถือ',
       'ฝ่ายดูแลกรมธรรม์',
-      Kyoya Insurance Public Company Limited,
+      INSURER_TH,
     ].filter((line, index, all)=>line!=='' || (index>0 && all[index-1]!==''));
     return {
       to:d.recipientEmail||'',
